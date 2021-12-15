@@ -1,0 +1,48 @@
+﻿\
+@model IEnumerable<Lab5_Gadgets.Models.appointment>
+
+@{ ViewData["Title"] = "Index"; }
+
+<!--Generates the table that displays all appointments-->
+<h1>Book an Appointment</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.appointmentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.salesRep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.salesRep)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.appointmentDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.salesRep.fullname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.customer.customerID)
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.appointmentID">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.appointmentID">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.appointmentID">Delete</a>
+    </td>
+</tr>}
+    </tbody>
+</table>
+

@@ -1,0 +1,42 @@
+﻿@model Lab5_Gadgets.Models.SalesRep
+
+@{ ViewData["Title"] = "Edit"; }
+<!--Generates the form for editing salesRep information-->
+<h1>Edit</h1>
+
+<h4>SalesRep</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="salesRepID" />
+            <div class="form-group">
+                <label asp-for="salesRepFName" class="control-label">First Name</label>
+                <input asp-for="salesRepFName" class="form-control" />
+                <span asp-validation-for="salesRepFName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="salesRepLName" class="control-label">Last Name</label>
+                <input asp-for="salesRepLName" class="form-control" />
+                <span asp-validation-for="salesRepLName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="salesRepExt" class="control-label">Extension</label>
+                <input asp-for="salesRepExt" class="form-control" />
+                <span asp-validation-for="salesRepExt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

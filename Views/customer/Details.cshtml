@@ -1,0 +1,47 @@
+﻿@model Lab5_Gadgets.Models.customer
+
+@{ ViewData["Title"] = "Details"; }
+
+<!--generates the page for displaying customer details-->
+<h1>Details</h1>
+
+<div>
+    <h4>customer</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerFName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerFName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerLName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerLName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerPhonenumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerPhonenumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerEmail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerEmail)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.customerID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

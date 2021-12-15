@@ -1,0 +1,48 @@
+﻿@model Lab5_Gadgets.Models.customer
+
+@{ ViewData["Title"] = "Edit"; }
+
+<!-- generates the form for editing a customer's information-->
+<h1>Edit</h1>
+
+<h4>customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="customerID" />
+            <div class="form-group">
+                <label asp-for="customerFName" class="control-label">First Name</label>
+                <input asp-for="customerFName" class="form-control" />
+                <span asp-validation-for="customerFName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customerLName" class="control-label">Last Name</label>
+                <input asp-for="customerLName" class="form-control" />
+                <span asp-validation-for="customerLName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customerPhonenumber" class="control-label">Phonenumber</label>
+                <input asp-for="customerPhonenumber" class="form-control" />
+                <span asp-validation-for="customerPhonenumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customerEmail" class="control-label">Email</label>
+                <input asp-for="customerEmail" class="form-control" />
+                <span asp-validation-for="customerEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

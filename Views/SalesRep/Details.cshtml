@@ -1,0 +1,35 @@
+﻿@model Lab5_Gadgets.Models.SalesRep
+
+@{ ViewData["Title"] = "Details"; }
+
+<!--Generates the page that displays salesRep details-->
+<h1>Details</h1>
+
+<div>
+    <h4>SalesRep</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.salesRepFName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.salesRepFName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.salesRepLName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.salesRepLName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.salesRepExt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.salesRepExt)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.salesRepID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Lab5_Gadgets.Models.SalesRep>
+
+@{ ViewData["Title"] = "Index"; }
+
+<!--Generates the table that displays all salesReps-->
+<h1>SalesReps</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.salesRepFName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.salesRepLName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.salesRepExt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.salesRepFName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.salesRepLName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.salesRepExt)
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.salesRepID">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.salesRepID">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.salesRepID">Delete</a>
+    </td>
+</tr>}
+    </tbody>
+</table>

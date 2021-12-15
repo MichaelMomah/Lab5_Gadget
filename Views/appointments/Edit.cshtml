@@ -1,0 +1,43 @@
+﻿@model Lab5_Gadgets.Models.appointment
+
+@{ ViewData["Title"] = "Edit"; }
+
+<!--Generates the form for editing an appointment-->
+<h1>Edit</h1>
+
+<h4>appointment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="appointmentID" />
+            <div class="form-group">
+                <label asp-for="appointmentDate" class="control-label">Appointment Date</label>
+                <input asp-for="appointmentDate" class="form-control" />
+                <span asp-validation-for="appointmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="salesRepID" class="control-label">SalesRep</label>
+                <select asp-for="salesRepID" class="form-control" asp-items="ViewBag.salesRepID"></select>
+                <span asp-validation-for="salesRepID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customerID" class="control-label">Customer ID</label>
+                <select asp-for="customerID" class="form-control" asp-items="ViewBag.customerID"></select>
+                <span asp-validation-for="customerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

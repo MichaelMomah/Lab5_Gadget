@@ -1,0 +1,35 @@
+﻿@model Lab5_Gadgets.Models.appointment
+
+@{ ViewData["Title"] = "Details"; }
+
+<!--Generate the page for viewing the details of an appointment-->
+<h1>Details</h1>
+
+<div>
+    <h4>appointment</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.appointmentDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.appointmentDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.salesRep)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.salesRep.fullname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customer.customerID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.appointmentID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
